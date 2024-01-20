@@ -9,9 +9,14 @@ public class Main {
         list.add(new Member("d", 8));
         list.add(new Member("e", 9));
         list.add(new Member("f", 5));
-
+        // stream map1
         list.stream()
                 .map(member -> member.getName())
+                .forEach(System.out::println);
+
+        // stream map2
+        list.stream()
+                .map(member -> member.getAge())
                 .forEach(System.out::println);
     }
 }
@@ -20,7 +25,7 @@ record Member(String name, int age) {
     public String getName() {
         return name;
     }
-    public int age() {
+    public int getAge() {
         return age;
     }
 }
